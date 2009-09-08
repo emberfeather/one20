@@ -1,4 +1,4 @@
-<cfcomponent output="false">
+<cfcomponent extends="plugins.error.inc.resource.application.error" output="false">
 	<cfset this.name = 'one20' />
 	<cfset this.applicationTimeout = createTimeSpan(2, 0, 0, 0) />
 	<cfset this.sessionManagement = true />
