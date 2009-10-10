@@ -17,6 +17,7 @@
 		"tagger",
 		"tracker",
 		"user",
+		"user-openid",
 		"widget"
 	]
 }
