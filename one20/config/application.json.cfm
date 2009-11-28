@@ -12,6 +12,7 @@
 		"admin",
 		"content",
 		"content-scm",
+		"documentation",
 		"error",
 		"i18n",
 		"tagger",

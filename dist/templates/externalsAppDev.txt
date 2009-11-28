@@ -3,6 +3,7 @@ cf-compendium			https://cf-compendium.googlecode.com/svn/trunk/cf-compendium
 plugins/admin			https://algid-admin.googlecode.com/svn/trunk/admin
 plugins/content			https://algid-content.googlecode.com/svn/trunk/content
 plugins/content-scm		https://algid-content-scm.googlecode.com/svn/trunk/content-scm
+plugins/documentation	https://algid-documentation.googlecode.com/svn/trunk/documentation
 plugins/error			https://algid-error.googlecode.com/svn/trunk/error
 plugins/i18n			https://algid-i18n.googlecode.com/svn/trunk/i18n
 plugins/tagger			https://algid-tagger.googlecode.com/svn/trunk/tagger
