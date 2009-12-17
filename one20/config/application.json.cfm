@@ -15,6 +15,7 @@
 		"documentation",
 		"error",
 		"i18n",
+		"security",
 		"tagger",
 		"tracker",
 		"user",

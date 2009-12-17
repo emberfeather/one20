@@ -6,6 +6,7 @@ plugins/content-scm		https://algid-content-scm.googlecode.com/svn/trunk/content-
 plugins/documentation	https://algid-documentation.googlecode.com/svn/trunk/documentation
 plugins/error			https://algid-error.googlecode.com/svn/trunk/error
 plugins/i18n			https://algid-i18n.googlecode.com/svn/trunk/i18n
+plugins/security		https://algid-security.googlecode.com/svn/trunk/security
 plugins/tagger			https://algid-tagger.googlecode.com/svn/trunk/tagger
 plugins/tracker			https://algid-tracker.googlecode.com/svn/trunk/tracker
 plugins/user			https://algid-user.googlecode.com/svn/trunk/user
