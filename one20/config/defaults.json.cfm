@@ -12,5 +12,6 @@
 		"type": "PostgreSQL"
 	},
 	"environment": "production",
-	"path": "/"
+	"path": "/one20/one20/",
+	"useThreaded": true
 }
