@@ -13,5 +13,5 @@
 	},
 	"environment": "production",
 	"path": "/one20/one20/",
-	"useThreaded": true
+	"useThreaded": false
 }
