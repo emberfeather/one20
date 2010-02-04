@@ -1,4 +1,8 @@
 .project
+varScoper
+mxunit
+build/logs/
+build/settings/user.properties
 one20/algid
 one20/cf-compendium
 one20/plugins/*
