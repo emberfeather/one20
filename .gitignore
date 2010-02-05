@@ -5,4 +5,5 @@ build/logs/
 build/settings/user.properties
 one20/algid
 one20/cf-compendium
+one20/config/settings.json.cfm
 one20/plugins/*

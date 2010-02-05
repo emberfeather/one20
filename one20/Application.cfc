@@ -5,8 +5,6 @@
 	<cfset this.sessionTimeout = createTimeSpan(0, 0, 30, 0) />
 	
 	<cfset this.mappings['/root'] = getDirectoryFromPath( getCurrentTemplatePath() ) />
-	<cfset this.mappings['/algid'] = this.mappings['/root'] & "algid/" />
-	<cfset this.mappings['/cf-compendium'] = this.mappings['/root'] & "cf-compendium/" />
 	<cfset this.mappings['/plugins'] = this.mappings['/root'] & "plugins/" />
 	
 	<cffunction name="onApplicationEnd" access="public" returntype="void" output="false">
