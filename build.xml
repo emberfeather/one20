@@ -26,7 +26,7 @@
 		<apply executable="java" parallel="false" dest="${basedir}/${project.key}">
 			<fileset dir="${basedir}${file.separator}${project.key}" includes="**/*.css" excludes="**/*-min.css" />
 			<arg line="-jar"/>
-			<arg path="${build.lib}${file.separator}{build.lib.jar.compressor}" />
+			<arg path="${build.lib}${file.separator}${build.lib.jar.compressor}" />
 			<arg line="-v"/>
 			<srcfile/>
 			<arg line="-o"/>
@@ -99,7 +99,7 @@
 		<delete file="${test.varscoper.resultFile}"/>
 		
 		<!-- Fail the build if there are any violations of the var scoping -->
-		<fail message="Var Scope Violation:${line.separator}${test.varscoper.csv}">
+		<fail message="Var Scope Violation: ${line.separator}${test.varscoper.csv}">
 			<condition>
 				<isset property="test.varscoper.csv"/>
 			</condition>
