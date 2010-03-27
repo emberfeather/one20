@@ -36,5 +36,6 @@
 		"user-openid",
 		"widget"
 	],
+	"storagePath": "/storage",
 	"useThreaded": true
 }
