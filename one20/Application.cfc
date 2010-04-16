@@ -45,7 +45,7 @@
 		<cfargument name="sessionScope" type="struct" required="true" />
 		<cfargument name="applicationScope" type="struct" required="true" />
 		
-		<!--- Start the session --->
+		<!--- End the session --->
 		<cfset session.sparkplug.end( arguments.applicationScope, arguments.sessionScope ) />
 	</cffunction>
 	
