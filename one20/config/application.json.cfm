@@ -24,6 +24,7 @@
 	"path": "/one20/one20/",
 	"plugins": [
 		"admin",
+		"api",
 		"content",
 		"content-scm",
 		"documentation",
