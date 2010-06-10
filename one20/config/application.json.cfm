@@ -21,7 +21,7 @@
 		]
 	},
 	"key": "one20",
-	"path": "/one20/one20/",
+	"path": "/",
 	"plugins": [
 		"admin",
 		"api",
