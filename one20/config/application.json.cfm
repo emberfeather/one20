@@ -38,5 +38,6 @@
 		"widget"
 	],
 	"storagePath": "/storage",
+	"useFuzzySearch": false,
 	"useThreaded": true
 }
