@@ -24,18 +24,10 @@
 	"path": "/",
 	"plugins": [
 		"admin",
-		"api",
-		"content",
-		"content-scm",
-		"documentation",
 		"error",
-		"i18n",
-		"security",
-		"tagger",
-		"tracker",
+		"plugins",
 		"user",
-		"user-openid",
-		"widget"
+		"user-openid"
 	],
 	"storagePath": "/storage",
 	"useFuzzySearch": false,
