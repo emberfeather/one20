@@ -25,9 +25,7 @@
 	"plugins": [
 		"admin",
 		"error",
-		"plugins",
-		"user",
-		"user-openid"
+		"plugins"
 	],
 	"storagePath": "/storage",
 	"useFuzzySearch": false,
