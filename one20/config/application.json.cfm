@@ -24,6 +24,7 @@
 	"path": "/",
 	"plugins": [
 		"admin",
+		"api",
 		"error",
 		"plugins"
 	],
