@@ -30,5 +30,6 @@
 	],
 	"storagePath": "/storage",
 	"useFuzzySearch": false,
-	"useThreaded": true
+	"useThreaded": true,
+	"version": "0.1.0"
 }
