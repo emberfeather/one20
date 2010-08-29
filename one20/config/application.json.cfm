@@ -21,22 +21,15 @@
 		]
 	},
 	"key": "one20",
-	"path": "/one20/one20/",
+	"path": "/",
 	"plugins": [
 		"admin",
 		"api",
-		"content",
-		"content-scm",
-		"documentation",
 		"error",
-		"i18n",
-		"security",
-		"tagger",
-		"tracker",
-		"user",
-		"user-openid",
-		"widget"
+		"plugins"
 	],
 	"storagePath": "/storage",
-	"useThreaded": true
+	"useFuzzySearch": false,
+	"useThreaded": true,
+	"version": "0.1.0"
 }
