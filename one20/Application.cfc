@@ -3,6 +3,7 @@
 	<cfset this.applicationTimeout = createTimeSpan(2, 0, 0, 0) />
 	<cfset this.sessionManagement = true />
 	<cfset this.sessionTimeout = createTimeSpan(0, 0, 30, 0) />
+	<cfset this.sessionType = 'j2ee' />
 	
 	<cfset this.mappings['/root'] = getDirectoryFromPath( getCurrentTemplatePath() ) />
 	<cfset this.mappings['/plugins'] = this.mappings['/root'] & "plugins/" />
