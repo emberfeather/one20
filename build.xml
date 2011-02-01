@@ -8,4 +8,65 @@
 	
 	<!-- Include the master build file -->
 	<import file="${basedir}/build/master/master.xml"/>
+	
+	<target name="release" depends="prepare,minify,testVarScoper" description="Tags a release">
+		<echo message="Starting: Release of version ${project.version}" />
+		
+		<!-- Start a release branch -->
+		<git command="flow" dir="${basedir}">
+			<args>
+				<arg value="release" />
+				<arg value="start" />
+				<arg value="${project.version}" />
+			</args>
+		</git>
+		
+		<!-- Update the release version number -->
+		<replaceregexp file="${basedir}/version.json"
+			match="&#34;version&#34;: &#34;[0-9\.]*&#34;"
+			replace="&#34;version&#34;: &#34;${project.version}&#34;"
+			byline="true"/>
+		
+		<!-- Update the download version number -->
+		<replaceregexp file="${basedir}/version.json"
+			match="tarball/[0-9\.]*&#34;"
+			replace="tarball/${project.version}&#34;"
+			byline="true"
+			/>
+		
+		<!-- Finish a release branch -->
+		<git command="commit" dir="${basedir}">
+			<args>
+				<arg value="-a" />
+				<arg value="-m 'Updated version files for release'" />
+			</args>
+		</git>
+		
+		<!-- Finish a release branch -->
+		<git command="flow" dir="${basedir}">
+			<args>
+				<arg value="release" />
+				<arg value="finish" />
+				<arg value="${project.version}" />
+				<arg value="-m 'Tagging version ${project.version}'" />
+			</args>
+		</git>
+		
+		<!-- Update the build version -->
+		<propertyfile file="${build}/settings/version.properties" comment="Version properties">
+			<entry key="project.version.build" value="1" operation="+" type="int"/>
+		</propertyfile>
+		
+		<antcall target="versionChanged" inheritall="false" inheritrefs="false"></antcall>
+		
+		<!-- Commit the updated version files -->
+		<git command="commit" dir="${basedir}">
+			<args>
+				<arg value="-a" />
+				<arg value="-m 'Updated version properties for next release'" />
+			</args>
+		</git>
+		
+		<echo message="Finished: Release of version ${project.version}"/>
+	</target>
 </project>
