@@ -10,7 +10,7 @@ component extends="plugins.error.inc.resource.application.error" {
 	
 	public void function onApplicationEnd(required string applicationScope) {
 		// Start the application
-		application.sparkplug.end(arguments.applicationScope);
+		arguments.applicationScope.sparkplug.end(arguments.applicationScope);
 	}
 	
 	public boolean function onApplicationStart() {
@@ -38,7 +38,7 @@ component extends="plugins.error.inc.resource.application.error" {
 	
 	public void function onSessionEnd(required struct sessionScope, required struct applicationScope) {
 		// End the session
-		session.sparkplug.end( arguments.applicationScope, arguments.sessionScope );
+		arguments.sessionScope.sparkplug.end( arguments.applicationScope, arguments.sessionScope );
 	}
 	
 	public void function onSessionStart() {
