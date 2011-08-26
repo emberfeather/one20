@@ -26,6 +26,7 @@
 	"plugins": [
 		"admin",
 		"api",
+		"editor",
 		"error",
 		"plugins"
 	],
