@@ -1,4 +1,4 @@
-component extends="plugins.error.inc.resource.application.error" {
+component {
 	this.name = 'one20';
 	this.applicationTimeout = createTimeSpan(2, 0, 0, 0);
 	this.sessionManagement = true;
