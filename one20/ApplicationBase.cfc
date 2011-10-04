@@ -2,7 +2,6 @@ component extends="plugins.error.inc.resource.application.error" {
 	this.name = 'one20';
 	this.applicationTimeout = createTimeSpan(2, 0, 0, 0);
 	this.sessionManagement = true;
-	this.sessionTimeout = __determineSessionTimeout();
 	this.sessionType = 'j2ee';
 	
 	this.mappings['/root'] = getDirectoryFromPath( getCurrentTemplatePath() );
