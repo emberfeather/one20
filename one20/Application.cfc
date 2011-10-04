@@ -2,7 +2,7 @@ component extends="plugins.error.inc.resource.application.error" {
 	this.name = 'one20';
 	this.applicationTimeout = createTimeSpan(2, 0, 0, 0);
 	this.sessionManagement = true;
-	this.sessionTimeout = createTimeSpan(0, 0, 30, 0);
+	this.sessionTimeout = __determineSessionTimeout();
 	this.sessionType = 'j2ee';
 	
 	this.mappings['/root'] = getDirectoryFromPath( getCurrentTemplatePath() );
@@ -46,5 +46,46 @@ component extends="plugins.error.inc.resource.application.error" {
 		
 		// Start the session
 		session.sparkplug.start( application, session );
+	}
+	
+	private numeric function __determineSessionTimeout(numeric days = 0, numeric hours = 0, numeric minutes = 30, numeric seconds = 0, numeric milliseconds = 0) {
+		local.bots = [
+			"80legs",
+			"Bot",
+			"Accoona-AI-Agent",
+			"Arachmo",
+			"alexa",
+			"appie",
+			"spider",
+			"Ask Jeeves",
+			"crawl",
+			"FAST",
+			"Firefly",
+			"froogle",
+			"InfoSeek",
+			"inktomi",
+			"looksmart",
+			"NationalDirectory",
+			"rabaz",
+			"Scooter",
+			"Slurp",
+			"Spade",
+			"TECNOSEEK",
+			"Teoma",
+			"WebBug",
+			"www.galaxy.com",
+			"Yahoo! Slurp",
+			"ZyBorg"
+		];
+		
+		local.agent = cgi.http_user_agent;
+		
+		for (local.i = 1; local.i <= arrayLen(bots); local.i++) {
+			if(findNoCase(bots[local.i], local.agent)) {
+				return createTimeSpan(0, 0, 2, 0);
+			}
+		}
+		
+		return createTimeSpan(arguments.days, arguments.hours, arguments.minutes, arguments.seconds, arguments.milliseconds);
 	}
 }
