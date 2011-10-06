@@ -81,7 +81,7 @@ component {
 		
 		for (local.i = 1; local.i <= arrayLen(bots); local.i++) {
 			if(findNoCase(bots[local.i], local.agent)) {
-				return createTimeSpan(0, 0, 1, 30);
+				return createTimeSpan(0, 0, 0, 2);
 			}
 		}
 		
