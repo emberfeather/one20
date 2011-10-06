@@ -47,7 +47,21 @@ component {
 		session.sparkplug.start( application, session );
 	}
 	
-	private numeric function __determineSessionTimeout(numeric days = 0, numeric hours = 0, numeric minutes = 30, numeric seconds = 0, numeric milliseconds = 0) {
+	private numeric function __determineSessionTimeout(array shortPaths = [], numeric days = 0, numeric hours = 0, numeric minutes = 30, numeric seconds = 0, numeric milliseconds = 0) {
+		local.shortSession = createTimeSpan(0, 0, 0, 2);
+		
+		local.scriptLen = len(cgi.script_name);
+		
+		for (local.i = 1; local.i <= arrayLen(arguments.shortPaths); local.i++) {
+			local.pathLen = len(arguments.shortPaths[local.i]);
+			
+			if(local.scriptLen >= local.pathLen
+					&& left(cgi.script_name, local.pathLen) == arguments.shortPaths[local.i]
+					&& !structKeyExists(getHttpRequestData().headers, 'x-requested-with')) {
+				return local.shortSession;
+			}
+		}
+		
 		local.bots = [
 			"80legs",
 			"Bot",
@@ -81,7 +95,7 @@ component {
 		
 		for (local.i = 1; local.i <= arrayLen(bots); local.i++) {
 			if(findNoCase(bots[local.i], local.agent)) {
-				return createTimeSpan(0, 0, 0, 2);
+				return local.shortSession;
 			}
 		}
 		
