@@ -48,7 +48,7 @@ component {
 	}
 	
 	private numeric function __determineSessionTimeout(array shortPaths = [], numeric days = 0, numeric hours = 0, numeric minutes = 30, numeric seconds = 0, numeric milliseconds = 0) {
-		local.shortSession = createTimeSpan(0, 0, 0, 2);
+		local.shortSession = createTimeSpan(0, 0, 0, 10);
 		
 		local.scriptLen = len(cgi.script_name);
 		
