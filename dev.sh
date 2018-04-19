@@ -114,6 +114,18 @@ then
 	ln -s $projectPath/postmark4cf/postmark4cf $webrootPath/postmark4cf
 fi
 
+# Create the application component
+if [ ! -e $projectPath/one20/one20/Application.cfc ]
+then
+        echo "Creating: $projectPath/one20/one20/Application.cfc"
+        echo "component extends=\"ApplicationBase\" {
+        this.name = 'one20';
+        this.sessionTimeout = __determineSessionTimeout([ '/one20/api/', '/one20/cron/' ]);
+
+        include template = \"plugins/error/inc/resource/application/error.cfm\";
+}" > $projectPath/one20/one20/Application.cfc
+fi
+
 # Create a plugins directory for the one20 application
 if [ ! -d $projectPath/one20/one20/plugins ]
 then
