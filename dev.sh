@@ -149,9 +149,14 @@ do
 		# Checkout the develop branch
 		git checkout develop
 	else
-		echo "Updating submodules: $projectPath/plugins/$plugin"
+    echo "Pulling: $plugin"
 
-		cd $projectPath/plugins/$plugin
+    cd $projectPath/plugins/$plugin
+    git pull
+
+		echo "Updating submodules: $plugin"
+
+    git submodule update
 	fi
 done
 
