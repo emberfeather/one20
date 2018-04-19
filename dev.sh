@@ -155,7 +155,7 @@ do
 	fi
 done
 
-# Symbolic link the plugins into the webroot and application
+# Symbolic link the plugins into the webroot.
 for plugin in ${plugins[*]}
 do
 	if [ ! -h $webrootPath/p/$plugin ]
@@ -163,6 +163,16 @@ do
 		echo "Linking: $plugin into webroot"
 		ln -s $projectPath/plugins/$plugin/$plugin $projectPath/one20/one20/plugins/$plugin
 		ln -s $projectPath/plugins/$plugin $webrootPath/p/$plugin
+	fi
+done
+
+# Symbolic link the plugins into the application.
+for plugin in ${plugins[*]}
+do
+	if [ ! -h $projectPath/one20/one20/plugins/$plugin ]
+	then
+		echo "Linking: $plugin into application"
+		ln -s $projectPath/plugins/$plugin/$plugin $projectPath/one20/one20/plugins/$plugin
 	fi
 done
 
