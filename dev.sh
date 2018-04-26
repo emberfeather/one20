@@ -66,10 +66,6 @@ do
 	then
 		echo "Cloning to: $projectPath/$project"
 		git clone --recurse-submodules git@github.com:$githubUser/$project.git $projectPath/$project
-
-		cd $projectPath/$project
-
-		git submodule update --init
 	else
 		echo "Updating submodules: $projectPath/$project"
 
