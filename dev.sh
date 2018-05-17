@@ -149,8 +149,12 @@ do
 	if [ ! -h $webrootPath/p/$plugin ]
 	then
 		echo "Linking: $plugin into webroot"
-		ln -s $projectPath/plugins/$plugin/$plugin $projectPath/one20/one20/plugins/$plugin
 		ln -s $projectPath/plugins/$plugin $webrootPath/p/$plugin
+	fi
+	if [ ! -h $projectPath/one20/one20/plugins/$plugin ]
+	then
+		echo "Linking: $plugin into one20"
+		ln -s $projectPath/plugins/$plugin/$plugin $projectPath/one20/one20/plugins/$plugin
 	fi
 done
 
